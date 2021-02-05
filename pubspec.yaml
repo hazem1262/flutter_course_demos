@@ -33,7 +33,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   http: ^0.12.2
-
+  flutter_bloc: ^6.1.1
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
