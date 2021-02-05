@@ -1,3 +1,5 @@
+import 'package:flutter_day2_demo/local_storage/db_helper.dart';
+
 class Post{
   int userId;
   int id;
@@ -12,5 +14,14 @@ class Post{
       title: json['title'],
       body: json['body']
     );
+  }
+
+  Map<String, dynamic> toMap(){
+    return {
+      DbHelper.COLUMN_ID:id,
+      DbHelper.COLUMN_USER_ID:userId,
+      DbHelper.COLUMN_TITLE:title,
+      DbHelper.COLUMN_BODY:body,
+    };
   }
 }
