@@ -14,3 +14,6 @@ https://github.com/hazem1262/flutter_course_demos/tree/provider
 
 ## State management (Bloc)
 https://github.com/hazem1262/flutter_course_demos/tree/block
+
+## Persistence (SQFlite)
+https://github.com/hazem1262/flutter_course_demos/tree/persistence_sqlite
