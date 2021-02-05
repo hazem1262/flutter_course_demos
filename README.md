@@ -8,3 +8,6 @@ https://github.com/hazem1262/flutter_course_demos/tree/networking
 
 ## Navigation
 https://github.com/hazem1262/flutter_course_demos/tree/navigation
+
+## State management(Provider)
+https://github.com/hazem1262/flutter_course_demos/tree/provider
