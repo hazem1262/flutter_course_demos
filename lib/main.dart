@@ -22,10 +22,33 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+/*
+* Although it’s convenient, it’s not recommended to put an API call in a build() method.
+
+Flutter calls the build() method every time it needs to change anything in the view,
+*  and this happens surprisingly often.
+*  Leaving the fetch call in your build() method floods the API with unnecessary calls
+* and slows down your app.
+* https://flutter.dev/docs/cookbook/networking/fetch-data
+
+*/
+class _MyHomePageState extends State<MyHomePage> {
+  Future<List<Post>> futurePosts;
+
+  @override
+  void initState() {
+    super.initState();
+    futurePosts = fetchPosts();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +56,11 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(title),
+        title: Text(widget.title),
       ),
       body: FutureBuilder<List<Post>>(
-        future: fetchPosts(),
+        future: futurePosts,
         builder: (context, snapshot){
-          print("snapshot error:" + snapshot.error.toString());
           if(snapshot.hasData){
             final posts = snapshot.data;
             return ListView.builder(
@@ -74,7 +96,6 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
-
 }
 
 
