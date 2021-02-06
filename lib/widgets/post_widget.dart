@@ -9,8 +9,17 @@ class PostWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => PostDetailsScreen(post: post,)));
+      onTap: () async{
+        final results = await Navigator.of(context).push(
+            MaterialPageRoute(
+                builder: (context) => PostDetailsScreen(post: post,)
+            )
+        );
+        if(results != null){
+          Scaffold.of(context)
+            ..removeCurrentSnackBar()
+            ..showSnackBar(SnackBar(content: Text("$results")));
+        }
       },
       child: Padding(
         padding: const EdgeInsets.all(4.0),

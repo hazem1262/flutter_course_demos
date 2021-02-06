@@ -67,7 +67,9 @@ Future<List<Post>> fetchPosts() async{
   if(response.statusCode == 200){
     print(response.body);
     // return (json.decode(response.body) as List).map((e) => Post.fromJson(e)).toList();
+    // List<String>.from(json["genre"].map((x) => x))
     return List<Post>.from((json.decode(response.body) as List).map((e) => Post.fromJson((e)))).toList();
+
   }else{
     throw Exception('FAILED TO LOAD POST');
   }
