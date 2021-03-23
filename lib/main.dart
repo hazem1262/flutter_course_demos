@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_day2_demo/array_response.dart';
+import 'package:flutter_day2_demo/nested_object_response.dart';
 import 'package:flutter_day2_demo/single_object_response.dart';
 
 void main() {
@@ -63,13 +64,13 @@ class MyHomePage extends StatelessWidget {
           GestureDetector(
             onTap: (){
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => ArrayResponse(title: 'Array of Object Response',))
+                  MaterialPageRoute(builder: (context) => NestedObjectResponse(title: 'Nested Object Response',))
               );
             },
             child: Card(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Center(child: Text('Array of Object Response')),
+                child: Center(child: Text('Nested Object Response')),
               ),
             ),
           )
