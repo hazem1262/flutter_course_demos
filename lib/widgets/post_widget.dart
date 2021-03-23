@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_day2_demo/models/post.dart';
-import 'file:///E:/android/projects/flutter_course_demoes/lib/ui/post_details/post_details_screen.dart';
+import 'package:flutter_day2_demo/ui/post_details/post_details_screen.dart';
 
 class PostWidget extends StatelessWidget {
   final Post post;
