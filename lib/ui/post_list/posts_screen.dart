@@ -1,7 +1,6 @@
 import 'package:flutter_day2_demo/ui/post_list/post_list_provider.dart';
 import 'package:flutter_day2_demo/widgets/post_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_day2_demo/models/post.dart';
 import 'package:provider/provider.dart';
 
 class PostsScreen extends StatelessWidget {

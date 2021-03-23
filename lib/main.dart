@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///E:/android/projects/flutter_course_demoes/lib/ui/post_list/posts_screen.dart';
+import 'package:flutter_day2_demo/ui/post_list/posts_screen.dart';
 
 void main() {
   runApp(MyApp());
