@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_day2_demo/ui/post_list/posts_screen.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder:(context) => MyApp()
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {

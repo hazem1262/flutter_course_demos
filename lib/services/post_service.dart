@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class PostService{
   Future<List<Post>> fetchPosts() async{
-    final response = await http.get('https://jsonplaceholder.typicode.com/posts');
+    final response = await http.get(Uri.https('jsonplaceholder.typicode.com', 'posts'));
     if(response.statusCode == 200){
       print(response.body);
       // return (json.decode(response.body) as List).map((e) => Post.fromJson(e)).toList();
