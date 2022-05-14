@@ -83,7 +83,8 @@ Flutter calls the build() method every time it needs to change anything in the v
 
 
 Future<List<Post>> fetchPosts() async {
-  final response = await http.get('https://jsonplaceholder.typicode.com/posts');
+  var url = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final response = await http.get(url);
   if(response.statusCode == 200){
     print(response.body);
     var mappedResponse = json.decode(response.body) as List;

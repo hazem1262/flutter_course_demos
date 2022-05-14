@@ -51,7 +51,8 @@ class SingleObjectResponse extends StatelessWidget {
   }
 }
 
-Future<dynamic> fetchPost() async{
-  var response = await http.get('https://jsonplaceholder.typicode.com/posts/1');
+Future<dynamic> fetchPost() async {
+  var url = Uri.parse('https://jsonplaceholder.typicode.com/posts/1');
+  var response = await http.get(url);
   return json.decode(response.body);
 }

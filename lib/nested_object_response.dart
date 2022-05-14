@@ -80,8 +80,9 @@ Flutter calls the build() method every time it needs to change anything in the v
 
 
 
-Future<List<Movie>> fetchMovies() async{
-  final response = await http.get('https://api.androidhive.info/json/movies.json');
+Future<List<Movie>> fetchMovies() async {
+  var url = Uri.parse('https://api.androidhive.info/json/movies.json');
+  final response = await http.get(url);
   if(response.statusCode == 200){
     print(response.body);
     return movieFromJson(response.body);
