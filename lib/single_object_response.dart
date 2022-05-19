@@ -56,3 +56,10 @@ Future<dynamic> fetchPost() async {
   var response = await http.get(url);
   return json.decode(response.body);
 }
+
+Future<dynamic> fetchPostUsingThen() async {
+  var url = Uri.parse('https://jsonplaceholder.typicode.com/posts/1');
+  http.get(url).then((response){
+    return json.decode(response.body);
+  });
+}
