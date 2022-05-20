@@ -19,7 +19,7 @@ class PostsScreen extends StatelessWidget {
       body: ChangeNotifierProvider<PostsProvider>(
         create: (context) => PostsProvider(),
         child: Consumer<PostsProvider>(
-          builder: (buildContext, postProvider, _){
+          builder: (buildContext, postProvider, _) {
             return (postProvider.posts != null)?
              ListView.builder(
                 itemCount: postProvider.posts.length,
@@ -33,5 +33,4 @@ class PostsScreen extends StatelessWidget {
       ),
     );
   }
-
 }

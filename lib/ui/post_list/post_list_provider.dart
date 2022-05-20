@@ -6,16 +6,16 @@ class PostsProvider extends ChangeNotifier{
   List<Post> posts;
   PostRepository _postRepository = PostRepository();
 
-  PostsProvider(){
+  PostsProvider() {
     getPosts();
   }
 
   void getPosts() {
     _postRepository.fetchPosts().then(
-            (newPosts){
-              posts = newPosts;
-              notifyListeners();
-            }
+      (newPosts) {
+        posts = newPosts;
+        notifyListeners();
+      }
     );
   }
 }
